@@ -1,14 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<link rel="stylesheet" href="styles.css" type="text/css">
+  <meta charset="UTF-8">
+  <title>MathSimples</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-<section>
-  <h1>Welcome!</h1>
-  <p>This card mixes HTML structure with CSS styling.</p>
-  <button>Learn more</button>
-</section>
+
+  <header>
+    <h1>MathSimples</h1>
+    <p>Calculadora + explicações básicas</p>
+  </header>
+
+  <main>
+
+    <section class="card">
+      <h2>Soma</h2>
+      <input type="number" id="soma1" placeholder="Número 1">
+      <input type="number" id="soma2" placeholder="Número 2">
+      <button onclick="somar()">Calcular</button>
+      <p id="resultadoSoma"></p>
+      <small>Soma = juntar valores</small>
+    </section>
+
+    <section class="card">
+      <h2>Subtração</h2>
+      <input type="number" id="sub1" placeholder="Número 1">
+      <input type="number" id="sub2" placeholder="Número 2">
+      <button onclick="subtrair()">Calcular</button>
+      <p id="resultadoSub"></p>
+      <small>Subtração = tirar um valor do outro</small>
+    </section>
+
+    <section class="card">
+      <h2>Multiplicação</h2>
+      <input type="number" id="mul1" placeholder="Número 1">
+      <input type="number" id="mul2" placeholder="Número 2">
+      <button onclick="multiplicar()">Calcular</button>
+      <p id="resultadoMul"></p>
+      <small>Multiplicar = repetir somas</small>
+    </section>
+
+    <section class="card">
+      <h2>Divisão</h2>
+      <input type="number" id="div1" placeholder="Número 1">
+      <input type="number" id="div2" placeholder="Número 2">
+      <button onclick="dividir()">Calcular</button>
+      <p id="resultadoDiv"></p>
+      <small>Dividir = repartir em partes iguais</small>
+    </section>
+
+  </main>
+
+  <script>
+    function somar() {
+      let a = Number(document.getElementById("soma1").value);
+      let b = Number(document.getElementById("soma2").value);
+      document.getElementById("resultadoSoma").innerText = "Resultado: " + (a + b);
+    }
+
+    function subtrair() {
+      let a = Number(document.getElementById("sub1").value);
+      let b = Number(document.getElementById("sub2").value);
+      document.getElementById("resultadoSub").innerText = "Resultado: " + (a - b);
+    }
+
+    function multiplicar() {
+      let a = Number(document.getElementById("mul1").value);
+      let b = Number(document.getElementById("mul2").value);
+      document.getElementById("resultadoMul").innerText = "Resultado: " + (a * b);
+    }
+
+    function dividir() {
+      let a = Number(document.getElementById("div1").value);
+      let b = Number(document.getElementById("div2").value);
+
+      if (b === 0) {
+        document.getElementById("resultadoDiv").innerText = "Não dá pra dividir por 0 😐";
+      } else {
+        document.getElementById("resultadoDiv").innerText = "Resultado: " + (a / b);
+      }
+    }
+  </script>
+
 </body>
 </html>
